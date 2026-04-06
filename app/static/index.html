@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Research Agent</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-glow"></div>
+    
+    <nav>
+        <div class="logo">
+            <span class="logo-icon">🔍</span>
+            <span class="logo-text">DeepResearch.ai</span>
+        </div>
+        <div class="nav-links">
+            <a href="/docs" target="_blank">API Docs</a>
+            <a href="https://github.com/NehalGarg29" target="_blank">Credits</a>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <h1>What do you want to <span class="accent">research</span> today?</h1>
+            <p class="subtitle">100% Free & Local AI Research Agent powered by Groq and ChromaDB.</p>
+        </header>
+
+        <section class="research-container">
+            <div class="input-wrapper">
+                <textarea id="research-query" placeholder="Enter a complex research topic..." rows="1"></textarea>
+                <button id="submit-btn">
+                    <span class="btn-text">Start Research</span>
+                    <span id="loader" class="hidden"></span>
+                </button>
+            </div>
+
+            <div id="status-container" class="hidden">
+                <div class="status-card">
+                    <div class="pulse"></div>
+                    <span id="status-text">Decomposing query...</span>
+                </div>
+            </div>
+
+            <div id="result-container" class="hidden">
+                <div class="result-card glass">
+                    <div class="result-header">
+                        <h2>Research Report</h2>
+                        <span id="score-badge" class="badge">Score: 5/5</span>
+                    </div>
+                    
+                    <div class="sub-queries-section">
+                        <h3>Sub-Questions Explored:</h3>
+                        <ul id="sub-queries-list"></ul>
+                    </div>
+
+                    <hr>
+
+                    <div class="answer-section">
+                        <div id="research-answer"></div>
+                    </div>
+
+                    <div class="result-footer">
+                        <span id="tokens-usage" class="usage">Tokens: 0</span>
+                        <span id="retrieval-usage" class="usage">Retrievals: 0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
